@@ -1,33 +1,369 @@
-.App {
-  text-align: center;
+:root {
+    --primaryColor: #FFF;
+    --secundaryColor: #673ab7;
+    --c-gray: #737373;
+    --transitionTime: 300ms;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
+::placeholder {
+    color: #673ab7;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Barlow', sans-serif;
 }
 
-.App-link {
-  color: #61dafb;
+.container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-auto-rows: 50px 100vh;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* HEADER CSS START */
+
+a {
+    text-decoration: none;
+    color: var(--secundaryColor);
 }
+
+h5 {    
+    color: var(--secundaryColor);
+    border-bottom: 1px solid var(--secundaryColor);
+    margin: 15px 0px;
+}
+
+header a {
+    color: var(--primaryColor);
+}
+
+header {
+    background-color: var(--secundaryColor);
+    padding: 10px;
+    align-items: center;
+}
+
+header nav {
+    display: flex;
+    justify-content: space-between;
+    height: 30px;
+}
+
+header nav div {
+    display: flex;
+    justify-content: space-between;
+    padding-left: 15px;
+    align-items: center;
+    font-weight: bold;
+}
+
+header nav div a {
+    font-size: 20px;
+}
+
+.tooltip {
+    background-color: var(--primaryColor);
+    display: none;
+    position: absolute;
+    padding: 5px;
+    font-size: 10px;
+    margin-left: -20px;
+    color: var(--secundaryColor);
+    border: 1px solid var(--secundaryColor);
+}
+
+header nav div a:hover .tooltip {
+    display: block;
+}
+
+/* HEADER CSS END */
+
+/* #################################################################### */
+
+/* DASHBOARD CSS START */
+
+main {
+    display: grid;
+    grid-template-columns: 2fr 8fr 2fr;
+    grid-template-rows: 60px auto;
+    background-color: var(--primaryColor);
+    height: fit-content;
+}
+
+main>div {
+    grid-column: 2/2;
+    padding: 10px;
+}
+
+main>div .cardModule {
+    /* display: flex; */
+    float: left;
+    height: 100px;
+    width: 100px;
+    margin: 10px 20px;
+    justify-content: center;
+    text-align: center;
+}
+
+.transitionScaleIn:hover {
+    transform: scale(1.2);
+    transition: all var(--transitionTime);
+}
+
+.backgroundAnimationColorDark:hover {    
+    background-color: #00000015;
+}
+
+.cardModuleIcon {
+    font-size: 80px;
+}
+
+.moduleTitle {
+    margin-top: 10px;
+    color: var(--secundaryColor);
+}
+
+.sectionTitle {
+    margin-bottom: 10px;
+    color: var(--secundaryColor);
+}
+
+.cardEstatisticas {
+    float: left;
+    height: 130px;
+    width: auto;
+    margin: 10px 20px;
+    justify-content: center;
+    color: var(--primaryColor);
+    background-color: var(--secundaryColor);
+    padding: 10px;
+}
+
+.cardEstatisticas span {
+    font-size: 56px;
+    align-items: center;
+    display: flex;
+    justify-content: space-around;
+}
+
+.cardEstatisticas div {
+    display: flex;
+    justify-content: space-around;
+}
+
+/* DASHBOARD CSS END */
+
+/* RESPONSIVIDADE START */
+
+/* @media only screen and (max-width: 600px) {
+    main {
+        grid-template-columns: 1fr;
+    }
+} */
+
+/* RESPONSIVIDADE END */
+
+/* FORMULÁRIOS CSS START */
+
+form {    
+    margin: 10px 0px;
+}
+
+form .formGroup {
+    margin: 15px 0px;
+}
+
+form label {
+    color: var(--secundaryColor);
+    margin-right: 10px;
+    font-weight: bold;
+    width: 125px;
+    display: inline-block;
+}
+
+.inputStyle {
+    color: var(--secundaryColor);
+    margin-right: 10px;
+    font-size: 15px;
+    vertical-align: middle;
+    height: 35px;
+    padding: 5px;
+    width: 50%;
+    border-radius: 0px;
+    border: 1px solid var(--secundaryColor);
+    border-left: 5px solid var(--secundaryColor);
+    letter-spacing: 1px;
+    background-color: #00000010;
+}
+
+form input:focus {
+    border: 1px solid var(--secundaryColor);
+}
+
+/* FORMULÁRIOS CSS END */
+
+/* BOTOES CSS START */
+button {
+    cursor: pointer;   
+}
+
+.btn{
+    height: 35px;
+    color: var(--primaryColor);
+    background-color: var(--secundaryColor);
+    font-weight: bolder;
+    padding: 0px 10px;
+    border: 0px; 
+}
+
+/* BOTOES CSS END */
+
+/* TABLE CSS START */
+
+.tableFormSearch i{
+    height: 35px;
+    vertical-align: middle;
+    font-size: 35px;
+    background-color: var(--secundaryColor);
+    width: 35px;
+    color: var(--primaryColor);
+}
+
+.tableFormSearch div{
+    display: flex;
+}
+
+.datatable {
+    width: 100%;
+    border-collapse: collapse;      
+    color: var(--secundaryColor);
+}
+
+.datatable thead tr{
+    background-color: var(--secundaryColor);    
+    color: var(--primaryColor);
+}
+
+.datatable th {
+    padding: .75rem;
+    text-align: inherit;
+    border-top: 1px solid var(--secundaryColor);
+}
+
+.datatable th a{   
+    color: var(--primaryColor);
+}
+.datatable th i{   
+    vertical-align: bottom;
+}
+
+.datatable tr {
+    display: table-row;
+    vertical-align: inherit;
+    border-color: inherit;
+}
+
+.datatable td{
+    border-top: 1px solid var(--secundaryColor);
+    padding: .75rem;
+    display: table-cell;
+}
+
+.datatable .actions button{
+    text-align: center;
+    vertical-align: middle;
+    border: 0px;
+    margin-right: 5px;
+    background-color: #fff0;    
+    color: var(--secundaryColor);    
+}
+
+.datatable .actions button:hover .tooltip{
+    display: block;
+}
+
+.datatable tbody tr:hover {    
+    background-color: #00000015;    
+}
+
+.paginationTable {
+    width: 100%;
+    margin: 15px 0px;
+}
+
+.paginationTable ul{
+    list-style: none;
+    display: flex;
+    height: 30px;
+    justify-content: center;
+}
+
+.paginationTable li{
+    width: 30px;
+    text-align: center;
+    border: 1px solid var(--secundaryColor);    
+    color: var(--secundaryColor);    
+    align-self: center;
+    margin: 1px;
+}
+.paginationTable li i{
+    vertical-align: middle;
+}
+/* TABLE CSS END */
+
+/* LABELGROUP CSS END */
+
+.labelGroup{
+    margin-bottom: 10px;
+    color: var(--secundaryColor); 
+    border-left: 5px solid;
+    padding-left: 10px;
+    height: fit-content;
+}
+
+.labelGroup label{
+    font-weight: bold
+}
+
+/* LABELGROUP CSS END */
+
+/* INFODATA CSS START */
+
+.infoData {
+    display: flex;
+}
+
+.infoData div {
+    margin-right: 20px;
+}
+
+.infoData i{
+    font-size: 150px;
+    padding: 20px;
+    border: 5px solid var(--secundaryColor); 
+    color: var(--secundaryColor); 
+    background-color: #00000010;
+}
+/* INFODATA CSS END */
+
+/* CC SEARCH INPUT START */
+
+.searchForm input{
+    height: 35px;
+    width: 25vw;
+    color: var(--secundaryColor);
+    margin-right: 10px;
+    font-size: 15px;
+    vertical-align: middle;
+    padding: 5px;
+    max-width: 500px;
+    border-radius: 0px;
+    letter-spacing: 1px;
+}
+
+
+
+/* CC SEARCH INPUT END */
+
